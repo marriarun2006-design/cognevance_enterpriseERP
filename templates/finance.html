@@ -1,1 +1,15 @@
+{% extends "base.html" %}{% block content %}
+Finance
+Income
+₹{{"%.2f"|format(income)}}
+Expense
+₹{{"%.2f"|format(expense)}}
 
+income
+Category
+Amount
+Note
+Add Record
+{% for r in records %}
+{{r.kind}} — {{r.category}} — ₹{{"%.2f"|format(r.amount)}} — {{r.note}}
+{% endfor %}{% endblock %}
