@@ -1,1 +1,11 @@
-
+{% extends "base.html" %}{% block content %}
+Employees
+Name
+Department
+Position
+Salary
+Email
+Add Employee
+{% for e in employees %}
+{{e.name}} — {{e.position}} — {{e.department}} — {{e.email}}
+{% endfor %}{% endblock %}
