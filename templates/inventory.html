@@ -1,1 +1,10 @@
-
+{% extends "base.html" %}{% block content %}
+Inventory
+Item
+SKU
+Quantity
+Price
+Add Item
+{% for i in items %}
+{{i.name}} — SKU {{i.sku}} — Qty {{i.quantity}} — ₹{{"%.2f"|format(i.price)}}
+{% endfor %}{% endblock %}
