@@ -1,1 +1,9 @@
-
+{% extends "base.html" %}{% block content %}
+Sales
+Item
+Quantity
+Sale amount
+Record Sale
+{% for s in sales %}
+{{s.item}} — Qty {{s.quantity}} — ₹{{"%.2f"|format(s.amount)}} — {{s.sold_at.strftime('%d %b %Y')}}
+{% endfor %}{% endblock %}
