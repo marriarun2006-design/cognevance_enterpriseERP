@@ -1,1 +1,14 @@
 
+{% extends "base.html" %}{% block content %}
+Analytics
+Finance by Type
+{% for kind,total in by_kind %}
+{{kind}}: ₹{{"%.2f"|format(total or 0)}}
+
+{% endfor %}
+Sales by Item
+{% for item,total in by_item %}
+{{item}}: ₹{{"%.2f"|format(total or 0)}}
+
+{% endfor %}
+{% endblock %}
