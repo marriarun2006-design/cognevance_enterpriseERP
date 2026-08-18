@@ -1,1 +1,19 @@
 
+{% extends "base.html" %}{% block content %}
+Enterprise Dashboard
+Welcome, {{session.name}} ({{session.role}})
+
+Revenue
+₹{{"%.2f"|format(revenue)}}
+Expenses
+₹{{"%.2f"|format(expenses)}}
+Employees
+{{employees}}
+Inventory Items
+{{inventory}}
+Recent Sales
+{% for s in recent %}
+{{s.item}} — {{s.quantity}} — ₹{{"%.2f"|format(s.amount)}}
+{% else %}
+No sales recorded.
+{% endfor %}{% endblock %}
